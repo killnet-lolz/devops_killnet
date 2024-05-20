@@ -1,0 +1,28 @@
+myhosts:
+  hosts:  
+    host1:
+      ansible_host: # IP-адрес, на котором расположен бот и основная БД (совпадает с RM_HOST и DB_HOST).
+      ansible_user: # Пользователь для настройки хоста Ansible. Должен иметь права sudo без пароля.
+      ansible_ssh_pass: # Пароль от этого пользователя.
+    host2:
+      ansible_host: # IP-адрес, на котором расположена реплика БД (совпадает с DB_REPL_HOST).
+      ansible_user: # Пользователь для настройки хоста Ansible. Должен иметь права sudo без пароля.
+      ansible_ssh_pass: # Пароль от этого пользователя.
+  vars:
+    DB_REPL_HOST: # IP-адрес реплики БД (совпадает с host2:ansible_host).
+    DB_REPL_USER: replicator
+    DB_REPL_PASSWORD: Qq123456
+    DB_REPL_PORT: 5432
+    POSTGRES_VERSION: 14
+    DB_HOST: # IP-адрес, на котором расположена основная БД (то же, что RM_HOST и host1:ansible_host).
+    DB_PORT: 5432
+    DB_USER: postgres
+    DB_PASSWORD: Qq12345
+    DB_DATABASE: # Название основной БД.
+    GIT: https://github.com/killnet-lolz/devops_killnet.git
+    WORKDIR: /root/ansible  
+    TOKEN: # Токен, который можно найти в Notion или письме.
+    RM_HOST: # Хост, на котором расположен бот и основная БД (то же, что и DB_HOST и host1:ansible_host).
+    RM_PORT: 22 
+    RM_USER: # Пользователь для SSH-подключения к хосту.
+    RM_PASSWORD: # Пароль пользователя для SSH.

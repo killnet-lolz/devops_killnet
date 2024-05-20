@@ -404,7 +404,7 @@ def get_repl_logs(update: Update, context):
 
     monitor = LinuxMonitor(hostname, port, username, password)
     monitor.connect()
-    logs=monitor.execute_command(f'echo {password} | sudo -S docker logs db 2>&1 | grep "replica" | tail -n20')
+    logs=monitor.execute_command("cat /var/log/postgresql/postgresql-14-main.log | grep replica | tail -n 20")
     # Обработка логов
     if logs:
         if len(logs) > 4096:
